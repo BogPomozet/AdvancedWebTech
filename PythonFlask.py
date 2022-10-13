@@ -1,18 +1,15 @@
 
-from flask import Flask
+from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
-@app.route("/")
-def root():
-    return "The default, 'root' route"
+@app.route("/private")
+def private():
+    #Test for user logged in failed so redirec to logib URL
+    return redirect(url_for('login'))
 
-@app.route("/hello/")
-def hello():
-    return "Hello Napier!!! :D"
-
-@app.route("/goodbye/")
-def goodbye():
-    return "Goodbye cruel world :C"
-
+@app.route('/login')
+def login():
+    return "Now we would get username and pass"
+    
 if __name__=="__main__":
     app.run(host='0.0.0.0', debug=True)
