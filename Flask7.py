@@ -1,5 +1,5 @@
 #URL Variable that enables to retieve a user's details by name
-#http://webtech-2223-24.napier.ac.uk:5000/hello/valentina
+#http://webtech-2223-24.napier.ac.uk:5000/hello/?name=valentina
 
 from flask import Flask
 app = Flask(__name__)
