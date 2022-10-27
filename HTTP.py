@@ -1,3 +1,7 @@
+#Using HTTP Verbs to request web resources
+# by using (default) GET to request to retrieve a recource
+# and POST request to send information to the resource
+
 from crypt import methods
 from flask import Flask, request
 app = Flask(__name__)
