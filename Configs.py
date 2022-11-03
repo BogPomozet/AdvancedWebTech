@@ -6,7 +6,7 @@ app = Flask(__name__)
 def init(app):
     config = configparser.ConfigParser()
     try:
-        config_location = "etc/defaults.cfg"
+        config_location = "defaults.cfg"
         config.read(config_location)
 
         app.config['DEBUG']==config.get("config", "debug")
