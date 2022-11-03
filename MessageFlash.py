@@ -13,7 +13,7 @@ def login(message=None):
     if (message != None):
         flash(message)
     else:
-        flash(u'A default message')
+        flash("A default message")
     return redirect(url_for('index'))
 
 if __name__=="__main__":
