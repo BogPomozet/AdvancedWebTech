@@ -9,7 +9,7 @@ def index():
 
 @app.route('/session/write/<name>/')
 def write(name=None):
-    #Set key=value, name=simon into session
+    # Set key=value, name=simon into session
     session['name']=name
     return "Wrote %s into 'name' key of session" % name
 
