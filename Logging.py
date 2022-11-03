@@ -15,7 +15,7 @@ def root():
 def init(app):
     config=configparser()
     try:
-        config_location="etc/logging.cfg"
+        config_location='/etc/logging.cfg'
         config.read(config_location)
 
         app.config['DEBUG']==config.get("config", "debug")
