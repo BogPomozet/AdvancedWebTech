@@ -6,11 +6,11 @@ app = Flask(__name__)
 def init(app):
     config = configparser.ConfigParser()
     try:
-        config_location = "defaults.cfg"
+        config_location = "etc/defaults.cfg"
         config.read(config_location)
 
         app.config['DEBUG']==config.get("config", "debug")
-        app.config['ip_addresss']=config.get("config","ip_address")
+        app.config['ip_address']=config.get("config","ip_address")
         app.config['port']=config.get("config","port")
         app.config['url']=config.get("config","url")
     except:
@@ -25,10 +25,10 @@ def init(app):
     @app.route('/config/')
     def config():
         s=[]
-        s.append('debug: '+str(app.conig['DEBUG']))
-        s.append('port: '+str(app.conig['port']))
-        s.append('url: '+str(app.conig['url']))
-        s.append('ip_address: '+str(app.conig['ip_address']))
+        s.append('debug: '+str(app.config['DEBUG']))
+        s.append('port: '+str(app.config['port']))
+        s.append('url: '+str(app.config['url']))
+        s.append('ip_address: '+str(app.config['ip_address']))
         return ', '.join(s)
 
     if __name__=="__main__":
