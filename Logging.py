@@ -1,6 +1,6 @@
 #not working
 
-import ConfigParser
+import configparser
 import logging
 
 from logging.handlers import RotatingFileHandler
@@ -15,7 +15,7 @@ def root():
         return "Hello Napier from the configuration testing app (Now with added logging)"
 
 def init(app):
-    config=ConfigParser.ConfigParser()
+    config=configparser.ConfigParser()
     try:
         config_location='/etc/logging.cfg'
         config.read(config_location)
