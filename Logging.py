@@ -17,7 +17,7 @@ def root():
 def init(app):
     config=configparser.ConfigParser()
     try:
-        config_location="/etc/logging.cfg"
+        config_location="etc/logging.cfg"
         config.read(config_location)
         print(config.read(config_location))
 
