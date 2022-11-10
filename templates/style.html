@@ -26,10 +26,21 @@
                 <a class="navbar- brand" href="#">ProjectName</a>
                 </div>
                 <div id="navbar- brand" href="#">ProjectName</div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </nav>
-        <h1>HELLO</h1>
-        <h2>Napier</h2>
-        <P>Demonstarting a flaskk app with templates for html generation and bootstrap for a little bit of stylr</P>
+
+        <div class="container">
+            <h1>HELLO</h1>
+            <h2>Napier</h2>
+            <p class="lead">Demonstarting a flaskk app with templates for html generation and bootstrap for a little bit of stylr</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{{ url_for('static',filename= 'js/bootstrap.min.js') }}"></script>
     </body>
 </html>
