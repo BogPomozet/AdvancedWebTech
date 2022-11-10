@@ -18,27 +18,27 @@ def init(app):
     except:
         print("Couldn't read configs from: ", config_location)
 
+init(app)
+
+@app.route('/')
+def root():
+    return "Hello from the configuration testing app"
+
+@app.route('/config/')
+def config():
+    s=[]
+    s.append('debug: '+str(app.config['DEBUG']))
+    s.append('port: '+str(app.config['port']))
+    s.append('url: '+str(app.config['url']))
+    s.append('ip_address: '+str(app.config['ip_address']))
+    return ', '.join(s)
+
+if __name__=="__main__":
     init(app)
-
-    @app.route('/')
-    def root():
-        return "Hello from the configuration testing app"
-
-    @app.route('/config/')
-    def config():
-        s=[]
-        s.append('debug: '+str(app.config['DEBUG']))
-        s.append('port: '+str(app.config['port']))
-        s.append('url: '+str(app.config['url']))
-        s.append('ip_address: '+str(app.config['ip_address']))
-        return ', '.join(s)
-
-    if __name__=="__main__":
-        init(app)
-        app.run(
-            host=app.config['ip_address'],
-            port=init(app.config['port'])
-        )
+    app.run(
+        host=app.config['ip_address'],
+        port=init(app.config['port'])
+    )
 
 
 
